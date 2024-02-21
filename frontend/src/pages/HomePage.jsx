@@ -6,6 +6,7 @@ import { Search } from "../components/Search"
 import { SortRepos } from "../components/SortRepos"
 import { ProfileInfo } from "../components/ProfileInfo"
 import { Repos } from "../components/Repos"
+import { Spinner } from "../components/Spinner"
 
 export const HomePage = () => {
 
@@ -53,11 +54,14 @@ export const HomePage = () => {
   return (
 
     <div className="m-4">
-      <Search/>
+      <Search/> 
       <SortRepos/>
       <div className="flex gap-4 lg:flex-row justify-center items-start">
-        <ProfileInfo userProfile={userProfile}/>
-        <Repos/> 
+        {userProfile && !loading && <ProfileInfo userProfile={userProfile}/>}
+
+        {repos.length > 0 && !loading && <Repos repos={repos}/>}
+
+        {/* {loading && <Spinner/>} */}
       </div>
     </div>
 
