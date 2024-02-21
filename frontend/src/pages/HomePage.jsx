@@ -6,6 +6,7 @@ import { Search } from "../components/Search"
 import { SortRepos } from "../components/SortRepos"
 import { ProfileInfo } from "../components/ProfileInfo"
 import { Repos } from "../components/Repos"
+
 export const HomePage = () => {
 
   const [userProfile, setUserProfile] = useState(null);
@@ -55,7 +56,7 @@ export const HomePage = () => {
       <Search/>
       <SortRepos/>
       <div className="flex gap-4 lg:flex-row justify-center items-start">
-        <ProfileInfo/>
+        <ProfileInfo userProfile={userProfile}/>
         <Repos/> 
       </div>
     </div>
