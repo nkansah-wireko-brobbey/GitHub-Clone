@@ -12,5 +12,4 @@ export const PROGRAMING_LANGUAGES={
     HTML: '/html.svg',
     CSS: '/css.svg',
     Csharp: '/csharp.svg',
-
 }

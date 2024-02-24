@@ -17,7 +17,7 @@ export const Repo = ({repo}) => {
 
 	const dateCreated = formatMemberSince(repo?.created_at);
 	return (
-		<li className='mb-10 ms-7'>
+		<li className='mb-10 ms-7 ease-in'>
 			<span
 				className='absolute flex items-center justify-center w-6 h-6 bg-blue-100
 			rounded-full -start-3 ring-8 ring-white'
@@ -63,7 +63,7 @@ export const Repo = ({repo}) => {
 				Released on {dateCreated}
 			</time>
 			<p className='mb-4 text-base font-normal text-gray-500'>
-				{repo?.description ? repo.description.slice(0,500) +"..." : "No description provided"}
+				{repo?.description ? repo.description.length > 500 ? repo.description.slice(0,500) +"...":repo.description : "No description provided"}
 			</p>
 			{PROGRAMING_LANGUAGES[repo?.language] ? 
 			(
